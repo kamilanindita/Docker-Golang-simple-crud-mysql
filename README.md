@@ -4,7 +4,7 @@ ___
 <br>
 ## Instalasi
 
-#### 1. Clone <a href="https://github.com/kamilanindita/PHP-CodeIgniter3-simple-crud-mysql">PHP-CodeIgniter3-simple-crud-mysql</a>
+#### 1. Clone <a href="https://github.com/kamilanindita/golang-web-simple-crud-mysql">golang-web-simple-crud-mysql</a>
 
 #### 2. Masukan file (Dockerfile dan docker-compose) ke dalam directory utama(root) 
 
