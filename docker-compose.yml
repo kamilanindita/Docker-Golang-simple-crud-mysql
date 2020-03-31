@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  mysql:
+    container_name: mysql_server
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - project_golang
+  app_project:
+    container_name: GolangApp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: projectgolangapp:1.0
+    ports:
+      - 9000:8000
+    depends_on:
+      - mysql
+    environment:
+      - DB_SERVER=mysql_server
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=website_crud
+    networks:
+      - project_golang
+
+networks:
+  project_golang:
+    name: project_golang
+
